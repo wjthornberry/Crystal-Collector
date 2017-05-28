@@ -1,90 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
 <head>
-  <title>simple crystal game</title>
-  
-  <style type="text/css">
-
-    .crystal-image {
-      width: 300px;
-      height: 300px;
-    }
-  </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Crystals</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css"> 
 </head>
+
 <body>
+  <div class="jumbotron">
+  <h1 class="header text-center">SPACE CRYSTALS:</h1>
+  <h4 class="header text-center">A game for discerning crystal connoisseurs everywhere*.</h4> 
+  <h6 class="header text-center">*Space exploration experience not required.</h6>
+  <button class="btn center-block" id="rulesBtn" data-popup-open="popup-1">Rules</button> 
+  </div>
 
-  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+<!--This div pops up to tell the user how to play-->
+<div class="popup" data-popup="popup-1">
+      <div class="popup-inner">
+          <h2>How to Play</h2>
+          <ol>
+            <li>The computer will pick a random number.</li>
+            <li>Clicking on the crystals below will add a certain amount of points to your number.</li>
+            <li>To win, match your score to the computer's score.</li>
+            <li><a data-popup-close="popup-1" href="#">Close</a></li>
+          <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+      </div>
+</div>
 
-  <!-- Note that this div is now empty. We will fill it dynamically -->
+<!--Game Container-->
+<div class="cotainer main">
+
+  <!--Wins and Losses-->
+    <div class="col-xs-1 col-xs-offset-9  ">
+      <div class="record text-center center-block">
+        <h5 class="end-msg" id="endMsg"></h5>
+        <h5 class="win">Wins: <span class="wins" id="numWins"></span></h5>
+        <h5 class="win">Losses: <span class="wins" id="numLosses"></span></h5>
+      </div>
+    </div>
+
+    <!--Crystals; filled dynamically -->
   <div id="crystals">
   </div>
 
-  <!-- JAVASCRIPT  -->
-  <!-- ========================================= -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <div class="row crystals">
+      <div class="col-xs-1 col-xs-offset-3">
+        <img class="img-responsive" id="red" src='assets/images/crystal-red.jpg'>
+      </div>
+      <div class="col-xs-1">
+        <img class="img-responsive" id="green" src='assets/images/crystal-green.jpg'>
+      </div>
+      <div class="col-xs-1">
+        <img class="img-responsive" id="blue" src='assets/images/crystal-blue.jpg'>
+      </div>
+      <div class="col-xs-1">
+        <img class="img-responsive" id="grey" src='assets/images/crystal-grey.jpg'>
+      </div>
+      <div class="col-xs-1">
+        <img class="img-responsive" id="purple" src='assets/images/crystal-purple.jpg'>
+    </div>
+  </div>
 
-  <script type="text/javascript">
+  <div class="row text-center">
+   
+    <!--Target Number Box-->
+    <div class="col-xs-12 col-md-6">
+      <div class="game text-center center-block">
+        <h4 class="random-number">Number: <span class="number-to-guess" id="targetNum"></span></h4>
+      </div>
+    </div>
+    <!--Score Box-->
+    <div class="col-xs-12 col-md-6">
+      <div class="game text-center center-block">
+        <h4 class="win">Your Number: <span class="wins" id="userScore"></span></h4>
+      </div>
+    </div>
+  </div>
 
-  var targetNumber = 53;
+  <!--Initializes the game-->
+  <button class="btn-info center-block" id="gameInit">Play</button>
 
-  $("#number-to-guess").text(targetNumber);
-
-  var counter = 0;
-
-  // Now for the hard part. Creating multiple crystals each with their own unique number value.
-
-  // We begin by expanding our array to include four options.
-  var numberOptions = [10, 5, 3, 7];
-
-  // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < numberOptions.length; i++) {
-
-    // For each iteration, we will create an imageCrystal
-    var imageCrystal = $("<img>");
-
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    imageCrystal.addClass("crystal-image");
-
-    // Each imageCrystal will be given a src link to the crystal image
-    imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    $("#crystals").append(imageCrystal);
-  }
-
-  // This time, our click event applies to every single crystal on the page. Not just one.
-  $(".crystal-image").on("click", function() {
-
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
+</div><!--main container-->
     
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    counter += crystalValue;
-
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
-
-    if (counter === targetNumber) {
-      alert("You win!");
-    }
-
-    else if (counter >= targetNumber) {
-      alert("You lose!!");
-    }
-
-  });
-
-  </script>
+  <!--Enter jQuery and JS magic--> 
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
