@@ -57,7 +57,6 @@ $(document).ready(function() {
         wins ++;
         $('#numWins').html(wins);
         $('img').hide();
-        $('#endMsg').show();
         $('#gameInit').show();
         alert('You did it!');
       } else if (score > targetScore) {
@@ -78,11 +77,13 @@ $(document).ready(function() {
         if (score === targetScore) {
           wins ++;
           $('#numWins').html(wins);
+          $('img').hide();
           $('#gameInit').show();
           alert('You did it! Victory is yours!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
+          $('img').hide();
           $('#gameInit').show();
           alert('Outsmarted by a crystal.');
         }
@@ -96,11 +97,13 @@ $(document).ready(function() {
         if (score === targetScore) {
           wins ++;
           $('#numWins').html(wins);
-          alert('You won! Hurrah!');
+          $('img').hide();
           $('#gameInit').show();
+          alert('You won! Hurrah!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
+          $('img').hide();
           $("#gameInit").show();
           alert('The space crystals got the better of you, this time.');
         }
@@ -114,11 +117,13 @@ $(document).ready(function() {
       if (score === targetScore) {
         wins ++;
         $('#numWins').html(wins);
+        $('img').hide();
         $('#gameInit').show();
         alert('You are one with the space crystals.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
+        $('img').hide();
         $('#gameInit').show();
         alert('Oh, no! You lost another round of Space Crystal. Will you give up?');
       }
@@ -132,11 +137,13 @@ $(document).ready(function() {
       if (score === targetScore) {
         wins ++;
         $('#numWins').html(wins);
+        $('img').hide();
         $('#game-Init').show();
         alert('Well DONE.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
+        $('img').hide();
         $('#gameInit').show();
         alert('Oh, too bad! You lost. That elusive crystal got away.');
       }
@@ -172,6 +179,7 @@ $(document).ready(function() {
 
       $('#endMsg').hide();
       $('img').show();
+      $('#gameInit').hide();
     });
 
   });

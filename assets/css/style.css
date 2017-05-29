@@ -68,7 +68,7 @@ body {
 	position: relative;
 }
 
-.target .wins {
+.target .wins .losses {
 	width: 10px;
 }
 
@@ -114,11 +114,12 @@ body {
 	margin-bottom: 20px;
 }
 
-.btn-info {
+#gameInit {
 	border-radius: 5px;
 	padding: 10px;
 	width: 100px;
 	margin-top: 50px;
+    background: #bcF2ff;
 }
 
 .footer {
