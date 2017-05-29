@@ -11,6 +11,18 @@
 	background: #bcF2ff;
 }
 
+/* To change the color of the jumbotron to green (win) or red (lose)
+Couldn't get it to work.
+
+/*.jumbo-win {
+    background: #33ffc4;
+}
+
+.jumbo-lose {    
+    background: #ff6a6a;
+}
+*/
+
 /* Popup for rules – outer */
 .popup {
     width:100%;
