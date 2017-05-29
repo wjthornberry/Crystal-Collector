@@ -1,5 +1,5 @@
 # Crystal-Collector
-Built with jQuery.
+Built with jQuery, JavaScript, CSS, and Bootstrap.
 
 How to play:
 There will be four crystals displayed on the page.
