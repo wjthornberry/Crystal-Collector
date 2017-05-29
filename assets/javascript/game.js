@@ -115,7 +115,7 @@ $(document).ready(function() {
         wins ++;
         $('#numWins').html(wins);
         $("#gameInit").show();
-        alert('You are one with the space crystals');
+        alert('You are one with the space crystals.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
