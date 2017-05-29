@@ -58,6 +58,13 @@ $(document).ready(function() {
         $('#numWins').html(wins);
         $('img').hide();
         $('#gameInit').show();
+        // Brett/Mark/Nate note: I tried to change color of jumbotron to a different color
+        // depending on game outcome (green for win, red for lose) then reset it
+        // using toggleClass but I couldn't get it to work that way (it works how it's set up now, 
+        // but it just seems that there's a simpler way to do it. Any ideas? 
+        // jumbotron turns green if user wins
+        // $('.jumbotron').toggleClass('jumbo-win');
+        $('.jumbotron').css("background", "#33FFC4");
         alert('You did it!');
       } else if (score > targetScore) {
         $('#endMsg').show();
@@ -65,6 +72,9 @@ $(document).ready(function() {
         $('#numLosses').html(losses);
         $('img').hide();
         $('#gameInit').show();
+        // Jumbotron turns red if user loses
+        // $('.jumbotron')toggleClass('jumbo-lose');
+        $('.jumbotron').css("background", "#FF6A6A");
         alert('Oh, too bad! You lost.');
     }
   });
@@ -79,12 +89,17 @@ $(document).ready(function() {
           $('#numWins').html(wins);
           $('img').hide();
           $('#gameInit').show();
+          $('.jumbotron').css("background", "#33FFC4");
+          // $('.jumbotron').toggleClass('jumbo-win');
           alert('You did it! Victory is yours!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
           $('img').hide();
           $('#gameInit').show();
+          $('.jumbotron').css("background", "#FF6A6A");
+          // Jumbotron turns red if user loses
+          // $('.jumbotron')toggleClass('jumbo-lose');
           alert('Outsmarted by a crystal.');
         }
   });
@@ -99,12 +114,17 @@ $(document).ready(function() {
           $('#numWins').html(wins);
           $('img').hide();
           $('#gameInit').show();
+          $('.jumbotron').css("background", "#33FFC4");
+          // $('.jumbotron').toggleClass('jumbo-win');
           alert('You won! Hurrah!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
           $('img').hide();
           $("#gameInit").show();
+          $('.jumbotron').css("background", "#FF6A6A");
+          // Jumbotron turns red if user loses
+          // $('.jumbotron')toggleClass('jumbo-lose');
           alert('The space crystals got the better of you, this time.');
         }
   });
@@ -119,12 +139,17 @@ $(document).ready(function() {
         $('#numWins').html(wins);
         $('img').hide();
         $('#gameInit').show();
+        $('.jumbotron').css("background", "#33FFC4");
+        // $('.jumbotron').toggleClass('jumbo-win');
         alert('You are one with the space crystals.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
         $('img').hide();
         $('#gameInit').show();
+        $('.jumbotron').css("background", "#FF6A6A");
+        // Jumbotron turns red if user loses
+        // $('.jumbotron')toggleClass('jumbo-lose');
         alert('Oh, no! You lost another round of Space Crystal. Will you give up?');
       }
   });
@@ -139,12 +164,17 @@ $(document).ready(function() {
         $('#numWins').html(wins);
         $('img').hide();
         $('#game-Init').show();
+        $('.jumbotron').css("background", "#33FFC4");
+        // $('.jumbotron').toggleClass('jumbo-win');
         alert('Well DONE.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
         $('img').hide();
         $('#gameInit').show();
+        $('.jumbotron').css("background", "#FF6A6A");
+        // Jumbotron turns red if user loses
+        // $('.jumbotron')toggleClass('jumbo-lose');
         alert('Oh, too bad! You lost. That elusive crystal got away.');
       }
   });
@@ -177,7 +207,9 @@ $(document).ready(function() {
 
       score = parseInt($('#userScore').html());
 
-      $('#endMsg').hide();
+    //Reset jumbotron color to default color
+      $('.jumbotron').css("background", "#bcf2ff");
+
       $('img').show();
       $('#gameInit').hide();
     });
