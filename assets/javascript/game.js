@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('btn-start').hide();
+  $("#gameInit").hide();
 
   //Opens rules popup
     $('[data-popup-open]').on('click', function(e)  {
@@ -58,14 +58,14 @@ $(document).ready(function() {
         $('#numWins').html(wins);
         $('img').hide();
         $('#endMsg').show();
-        $('btn-start').show();
+        $("#gameInit").show();
         alert('You did it!');
       } else if (score > targetScore) {
         $('#endMsg').show();
         losses ++;
         $('#numLosses').html(losses);
         $('img').hide();
-        $('btn-start').show();
+        $("#gameInit").show();
         alert('Oh, too bad! You lost.');
     }
   });
@@ -78,12 +78,12 @@ $(document).ready(function() {
         if (score === targetScore) {
           wins ++;
           $('#numWins').html(wins);
-          $('btn-start').show();
+          $("#gameInit").show();
           alert('You did it! Victory is yours!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
-          $('btn-start').show();
+          $("#gameInit").show();
           alert('Outsmarted by a crystal.');
         }
   });
@@ -97,11 +97,11 @@ $(document).ready(function() {
           wins ++;
           $('#numWins').html(wins);
           alert('You won! Hurrah!');
-          $('btn-start').show();
+          $("#gameInit").show();
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
-          $('btn-start').show();
+          $("#gameInit").show();
           alert('The space crystals got the better of you, this time.');
         }
   });
@@ -114,12 +114,12 @@ $(document).ready(function() {
       if (score === targetScore) {
         wins ++;
         $('#numWins').html(wins);
-        $('btn-start').show();
+        $("#gameInit").show();
         alert('You are one with the space crystals');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
-        $('btn-start').show();
+        $("#gameInit").show();
         alert('Oh, no! You lost another round of Space Crystal. Will you give up?');
       }
   });
