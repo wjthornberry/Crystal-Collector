@@ -3,14 +3,14 @@ $(document).ready(function() {
   $("#gameInit").hide();
 
   //Opens rules popup
-    $('[data-popup-open]').on('click', function(e)  {
+    $('[data-popup-open]').on('click', function()  {
       var targeted_popup_class = jQuery(this).attr('data-popup-open');
       $('[data-popup="' + targeted_popup_class + '"]').fadeIn(200);
         e.preventDefault();
     });
  
   //Closes rules popup
-    $('[data-popup-close]').on('click', function(e)  {
+    $('[data-popup-close]').on('click', function()  {
         var targeted_popup_class = jQuery(this).attr('data-popup-close');
         $('[data-popup="' + targeted_popup_class + '"]').fadeOut(200);
         e.preventDefault();
@@ -58,14 +58,14 @@ $(document).ready(function() {
         $('#numWins').html(wins);
         $('img').hide();
         $('#endMsg').show();
-        $("#gameInit").show();
+        $('#gameInit').show();
         alert('You did it!');
       } else if (score > targetScore) {
         $('#endMsg').show();
         losses ++;
         $('#numLosses').html(losses);
         $('img').hide();
-        $("#gameInit").show();
+        $('#gameInit').show();
         alert('Oh, too bad! You lost.');
     }
   });
@@ -78,12 +78,12 @@ $(document).ready(function() {
         if (score === targetScore) {
           wins ++;
           $('#numWins').html(wins);
-          $("#gameInit").show();
+          $('#gameInit').show();
           alert('You did it! Victory is yours!');
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
-          $("#gameInit").show();
+          $('#gameInit').show();
           alert('Outsmarted by a crystal.');
         }
   });
@@ -97,7 +97,7 @@ $(document).ready(function() {
           wins ++;
           $('#numWins').html(wins);
           alert('You won! Hurrah!');
-          $("#gameInit").show();
+          $('#gameInit').show();
         } else if (score > targetScore) {
           losses ++;
           $('#numLosses').html(losses);
@@ -114,12 +114,12 @@ $(document).ready(function() {
       if (score === targetScore) {
         wins ++;
         $('#numWins').html(wins);
-        $("#gameInit").show();
+        $('#gameInit').show();
         alert('You are one with the space crystals.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
-        $("#gameInit").show();
+        $('#gameInit').show();
         alert('Oh, no! You lost another round of Space Crystal. Will you give up?');
       }
   });
@@ -132,12 +132,12 @@ $(document).ready(function() {
       if (score === targetScore) {
         wins ++;
         $('#numWins').html(wins);
-        $('btn-start').show();
+        $('#game-Init').show();
         alert('Well DONE.');
       } else if (score > targetScore) {
         losses ++;
         $('#numLosses').html(losses);
-        $('btn-start').show();
+        $('#gameInit').show();
         alert('Oh, too bad! You lost. That elusive crystal got away.');
       }
   });
