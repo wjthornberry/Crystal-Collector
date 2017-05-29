@@ -21,70 +21,82 @@
 <!--This div pops up to tell the user how to play-->
 <div class="popup" data-popup="popup-1">
       <div class="popup-inner">
-          <h2>How to Play</h2>
+          <h3>How to Play</h3>
           <ol>
-            <li>The computer will pick a random number.</li>
-            <li>Clicking on the crystals below will add a certain amount of points to your number.</li>
-            <li>To win, match your score to the computer's score.</li>
-            <li><a data-popup-close="popup-1" href="#">Close</a></li>
+            <li><h6>The computer will pick a random number.</h6></li>
+            <li><h6>Clicking on the crystals below will add a certain amount of points to your number.</h6></li>
+            <li><h6>To win, match your score to the computer's score.</h6></li>
           <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
       </div>
 </div>
 
 <!--Game Container-->
-<div class="cotainer main">
+<div class="container main">
 
   <!--Wins and Losses-->
     <div class="col-xs-1 col-xs-offset-9  ">
-      <div class="record text-center center-block">
+      <div class="record-score center-block">
         <h5 class="end-msg" id="endMsg"></h5>
         <h5 class="win">Wins: <span class="wins" id="numWins"></span></h5>
         <h5 class="win">Losses: <span class="wins" id="numLosses"></span></h5>
       </div>
     </div>
 
-    <!--Crystals; filled dynamically -->
-  <div id="crystals">
-  </div>
-
-    <div class="row crystals">
+    <div class="row-crystals">
+      <div class="crystals">
       <div class="col-xs-1 col-xs-offset-3">
-        <img class="img-responsive" id="red" src='assets/images/crystal-red.jpg'>
+        <img class="img" id="red" src='assets/images/crystal-red.png'>
       </div>
       <div class="col-xs-1">
-        <img class="img-responsive" id="green" src='assets/images/crystal-green.jpg'>
+        <img class="img" id="green" src='assets/images/crystal-green.png'>
       </div>
       <div class="col-xs-1">
-        <img class="img-responsive" id="blue" src='assets/images/crystal-blue.jpg'>
+        <img class="img" id="blue" src='assets/images/crystal-blue.png'>
       </div>
       <div class="col-xs-1">
-        <img class="img-responsive" id="grey" src='assets/images/crystal-grey.jpg'>
+        <img class="img" id="grey" src='assets/images/crystal-grey.png'>
       </div>
       <div class="col-xs-1">
-        <img class="img-responsive" id="purple" src='assets/images/crystal-purple.jpg'>
+        <img class="img" id="purple" src='assets/images/crystal-purple.png'>
+    </div>
     </div>
   </div>
 
   <div class="row text-center">
    
     <!--Target Number Box-->
-    <div class="col-xs-12 col-md-6">
-      <div class="game text-center center-block">
-        <h4 class="random-number">Number: <span class="number-to-guess" id="targetNum"></span></h4>
+    <div class="col-xs-4 col-md-4">
+      <div class="game center-block">
+        <h4 class="random-number">Number: <span class="target" id="targetNum"></span></h4>
       </div>
     </div>
-    <!--Score Box-->
-    <div class="col-xs-12 col-md-6">
-      <div class="game text-center center-block">
+
+    <div class="col-xs-4 col-md-4">
+      <div class="center-block">
+        <button class="btn-info center-block" id="gameInit">Play</button>
+      </div>
+    </div>
+    <!--User Number Box-->
+    <div class="col-xs-4 col-md-4">
+      <div class="game center-block">
         <h4 class="win">Your Number: <span class="wins" id="userScore"></span></h4>
       </div>
     </div>
   </div>
 
   <!--Initializes the game-->
-  <button class="btn-info center-block" id="gameInit">Play</button>
+  
 
 </div><!--main container-->
+
+<div class="col-md-12">
+    <footer class="footer text-center">
+      <div class="container">
+        <p><a href="http://www.jakethornberry.net">Jake Thornberry</a> | <a href="https://github.com/wjthornberry/Crystal-Collector">GitHub Repo</a>
+        <br> &copy; 2017 Jake Thornberry</p>
+      </div>
+    </footer>
+</div> 
     
   <!--Enter jQuery and JS magic--> 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
