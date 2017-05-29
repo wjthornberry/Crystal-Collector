@@ -1,4 +1,4 @@
-# Crystal-Collector
+# Space-Crystals
 Built with jQuery, JavaScript, CSS, and Bootstrap.
 
 How to play:
