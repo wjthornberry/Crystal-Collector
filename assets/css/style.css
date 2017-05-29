@@ -11,6 +11,10 @@
 	background: #bcF2ff;
 }
 
+.btn {
+    background: #dadada;
+}
+
 /* To change the color of the jumbotron to green (win) or red (lose)
 Couldn't get it to work.
 
@@ -82,22 +86,26 @@ body {
 
 .target .wins .losses {
 	width: 10px;
+    background: #dadada;
 }
 
 .record-score {
 	border-radius: 10px;
-	background: #c0c0c0;
-	width:180px;
+	background: #dadada;
+	width:100px;
 	padding:5px;
 	margin-top: 1px;
+    margin-left: 115px;
+    box-shadow:0px 1px 1px rgba(0,0,0,1);
 }
 
 .game {
 	border-radius: 10px;
-	background: #c0c0c0;
+	background: #dadada;
 	width:250px;
 	padding:8px;
 	margin-top: 1px;
+    box-shadow:0px 1px 1px rgba(0,0,0,1);
 }
 
 .row-crystals {
