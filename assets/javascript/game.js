@@ -34,13 +34,6 @@ $(document).ready(function() {
     purple: $('#purple'),
   };
 
-  //Testing: Logs crystal values to console
-    // console.log('Red Score: ${crystals.redScore}');
-    // console.log('Green Score: ${crystals.greenScore}');
-    // console.log('Blue Score: ${crystals.blueScore}');
-    // console.log('Grey Score: ${crystals.greyScore}');
-    // console.log('Purple Score: ${crystals.purpleScore}');
-
   //Adds random target score
     parseInt($('#targetNum').html(targetScore));
 
@@ -168,13 +161,6 @@ $(document).ready(function() {
         grey: $('#grey'),
         purple: $('#purple'),
       };
-
-    //Testing: logs crystal values to console
-      // console.log('Red Score: ${crystals.redScore}');
-      // console.log('Green Score: ${crystals.greenScore}');
-      // console.log('Blue Score: ${crystals.blueScore}');
-      // console.log('Grey Score: ${crystals.greyScore}');
-      // console.log('Purple Score: ${crystals.purpleScore}');
 
     //Adds a random target score
       parseInt($('#targetNum').html(targetScore));
